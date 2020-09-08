@@ -1,0 +1,17 @@
+{
+  "name": "node-react-starter",
+  "description": "Nodejs/Express server  with a React frontend.",
+  "version": "0.1.0",
+  "scripts": {
+    "setup": "npm install && concurrently -n server,react -c green,blue \"cd ./server && npm install\" \"cd ./react && npm install\"",
+    "start": "concurrently -n server,react -c green,blue \"PORT=$PORT npm run start --prefix ./server\" \"npm run start --prefix ./react\"",
+    "build": "concurrently -n server,react -c green,blue \"npm run build --prefix ./server\" \"npm run build --prefix ./react\" && npm run copy-build",
+    "copy-build": "copyfiles ./server/dist/* ./dist && copyfiles ./react/dist/* ./dist"
+  },
+  "author": "LAVA",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "copyfiles": "^2.3.0"
+  }
+}

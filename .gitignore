@@ -1,0 +1,17 @@
+# Root Ignores
+/node_modules
+/dist
+
+# Server Ignores
+/server/node_modules
+/server/dist
+
+# React Ignores
+/react/node_modules
+/react/dist
+/react/.cache
+/react/.idea
+
+# OS Stuff
+*.DS_Store
+.vscode/
